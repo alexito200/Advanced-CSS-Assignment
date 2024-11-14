@@ -1,0 +1,162 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+#page {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas:
+    "head head"
+    "nav  main"
+    "foot  foot";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+}
+
+#page > header {
+    grid-area: head;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #8ca0ff;
+}
+
+#page > nav {
+    grid-area: nav;
+    border: 2px solid #ffa08c;
+}
+
+#page > main {
+    grid-area: main;
+    border: 2px solid #ffff64;
+}
+
+#page > footer {
+    grid-area: foot;
+    border: 2px solid #8cffa0;
+    text-align: center;
+    font-size: 20px;
+}
+
+h1 {
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+color: white;
+}
+
+nav {
+    padding: 1em 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.navbar li {
+    margin: 1em 1em;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    background-color: #8cffa0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.fa {
+    font-size: 60px;
+    margin: 20px 0;
+    color: red;
+    animation-name: around;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+
+
+button {
+    color: black;
+    background-color: rgba(300, 150, 300, 50%);
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 2px 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(300, 200, 100, 90%);
+}
+
+button:active {
+    animation-name: enlarge;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.container {
+    display: flex;
+    background-image: url(/media/city.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.item {
+    padding: 5px 10px;
+    border: 2px solid red;
+    height: auto;
+    width: 100%;
+}
+
+.background-fade {
+    background-color: rgba(100, 150, 300, 50%);
+}
+
+@keyframes enlarge {
+
+    0% {
+    }
+
+    100% {
+        transform: scale(2);
+    }
+
+}
+
+@keyframes around {
+
+    0% {
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
